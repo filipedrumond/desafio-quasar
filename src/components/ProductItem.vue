@@ -52,7 +52,7 @@ export default defineComponent({
       return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(self.price)
     },
     link: function () {
-      return '/product/' + this.id
+      return '/#/product/' + this.id
     }
   }
 })

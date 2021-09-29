@@ -61,13 +61,13 @@ const linksList = [
     title: 'Carrinho',
     caption: 'Seu carrinho de produtos',
     icon: 'shopping_cart',
-    link: '/carrinho'
+    link: '/#/carrinho'
   },
   {
     title: 'Produtos',
     caption: 'Listagem de produtos',
     icon: 'dashboard',
-    link: '/'
+    link: '/#/'
   }
 ]
 
