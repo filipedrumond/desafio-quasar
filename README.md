@@ -1,10 +1,15 @@
-# Quasar App (desafio)
+# Desafio de Quasar
 
-A Quasar Framework app
+Com certeza é um Quasar Framework app
 
 ## Install the dependencies
 ```bash
 npm install
+```
+
+## Run fake API JSON-SERVER
+```bash
+npm run runDB
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
@@ -12,7 +17,7 @@ npm install
 quasar dev
 ```
 
-### Lint the files
+### Lint the files and fix
 ```bash
 npm run lint
 ```
@@ -21,6 +26,7 @@ npm run lint
 ```bash
 quasar build
 ```
-
+### Assinatura
+Deu um pouco de trabalho mas estou aprendendo muito fazendo.
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://v2.quasar.dev/quasar-cli/quasar-conf-js).
