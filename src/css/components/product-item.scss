@@ -1,0 +1,13 @@
+.c-product-item{
+  img{
+    width: 35%;
+    height: auto;
+    // max-height: 50px;
+  }
+  &:not(:last-of-type){
+    border-bottom: 3px solid #ddd;
+  }
+  .value{
+    font-size: 1.1rem;
+  }
+}
