@@ -27,9 +27,6 @@ export default defineComponent({
       'counterGetter'
     ])
   },
-  created: function () {
-    console.log(mapGetters(['counterGetter']))
-  },
   methods: {
     ...mapMutations(['increment', 'decrement'])
   }

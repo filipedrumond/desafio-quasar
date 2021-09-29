@@ -15,7 +15,15 @@
           App Desafio
         </q-toolbar-title>
 
-        <div>Quasar v</div>
+        <div>
+          <q-item
+            clickable
+            tag="a"
+            href="/testes"
+          >
+            <q-icon name="shopping_cart" size="md" />
+          </q-item>
+        </div>
       </q-toolbar>
     </q-header>
 
