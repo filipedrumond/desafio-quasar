@@ -1,3 +1,3 @@
-export function setSessionIDACtion ({ commit }, sessionID) {
+export function setSessionIdAction ({ commit }, sessionID) {
   commit('setSessionID', sessionID)
 }

@@ -11,9 +11,9 @@ export default function sessionHanddler (store) {
     return
   }
   if (ssidCookie !== undefined && ssidStore === '') {
-    store.dispatch('session/setSessionIDACtion', ssidCookie)
+    store.dispatch('session/setSessionIdAction', ssidCookie)
     return
   }
-  store.dispatch('session/setSessionIDACtion', newSsid)
+  store.dispatch('session/setSessionIdAction', newSsid)
   Cookies.set('sessionID', newSsid)
 }
