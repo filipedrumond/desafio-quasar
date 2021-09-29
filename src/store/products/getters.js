@@ -4,3 +4,6 @@ export function getAll (state) {
 export function currentProduct (state) {
   return state.currentProduct
 }
+export function currentProductsFromCart (state) {
+  return state.productsCart
+}

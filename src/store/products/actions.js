@@ -24,3 +24,16 @@ export function getOneProduct ({ commit }, productId) {
       commit('setCurrentProduct', response.data)
     })
 }
+
+// Será se vou conseguir??
+// sim
+// export function getProductsFromList ({ commit, state }, productIdList) {
+//   const temp = state.products.filter(i => {
+//     if (Array.prototype.indexOf(productIdList.products, i.id) !== -1) return true
+//     return false
+//   })
+//   console.log(productIdList.products)
+//   console.log(state.products)
+//   console.log(temp)
+//   commit('setProductsCart', temp)
+// }
