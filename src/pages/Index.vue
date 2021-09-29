@@ -7,6 +7,7 @@
     >
     <h3>
       products: {{ getAll }}
+      {{ $filters.capitalizeFirstLetter('testes') }}
     </h3>
   </q-page>
 </template>
