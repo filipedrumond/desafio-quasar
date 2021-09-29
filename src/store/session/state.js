@@ -1,5 +1,8 @@
 export default function () {
   return {
-    sessionID: ''
+    sessionID: '',
+    shoppingCart: {
+      products: []
+    }
   }
 }

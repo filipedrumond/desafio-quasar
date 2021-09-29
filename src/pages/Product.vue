@@ -1,5 +1,5 @@
 <template>
-  <q-page class="text-center">
+  <q-page class="text-center product-fix-bottom">
     <img
       alt="Quasar logo"
       :src="currentProduct.img"
@@ -13,6 +13,7 @@
       <div>código: {{currentProduct.id}}</div>
       <div class="text-h6">{{ priceFormat }}</div>
     </div>
+    {{getShoppingCart}}
 
     <div class="fixed-bottom q-pb-md">
       <q-btn class="shadow-7"
@@ -28,17 +29,17 @@
 <script>
 import { defineComponent } from 'vue'
 import { createNamespacedHelpers } from 'vuex'
-import { useQuasar } from 'quasar'
-import Dialog from 'components/Dialog.vue'
+// import { useQuasar } from 'quasar'
+// import Dialog from 'components/Dialog.vue'
 
-const { mapGetters, mapActions } = createNamespacedHelpers('products')
+const { mapGetters: mapGettersProducts, mapActions: mapActionsProducts } = createNamespacedHelpers('products')
+const { mapGetters: mapGettersSession, mapActions: mapActionsSession } = createNamespacedHelpers('session')
 
 export default defineComponent({
   name: 'PageIndex',
   computed: {
-    ...mapGetters([
-      'currentProduct'
-    ]),
+    ...mapGettersProducts(['currentProduct']),
+    ...mapGettersSession(['getsessionID', 'getShoppingCart']),
     priceFormat: function () {
       const self = this
       return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(self.currentProduct.price)
@@ -50,17 +51,19 @@ export default defineComponent({
     }
   },
   methods: {
-    ...mapActions(['getOneProduct']),
+    ...mapActionsProducts(['getOneProduct']),
+    ...mapActionsSession(['addToShoppingCart']),
     onClick: function () {
-      const $q = useQuasar()
-      $q.dialog({
-        component: Dialog,
-        componentProps: {
-          title: 'something'
-        }
-      }).onDismiss(() => {
-        console.log('Called on OK or Cancel')
-      })
+      this.addToShoppingCart(this.currentProduct.id)
+      // const $q = useQuasar()
+      // $q.dialog({
+      //   component: Dialog,
+      //   componentProps: {
+      //     title: 'Produto Adicionado ao Carrinho'
+      //   }
+      // }).onDismiss(() => {
+      //   console.log('Called on OK or Cancel')
+      // })
     }
   },
   created: function () {
