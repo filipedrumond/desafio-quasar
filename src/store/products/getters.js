@@ -1,6 +1,6 @@
 export function getAll (state) {
   return state.products
 }
-export function getOne (state) {
+export function currentProduct (state) {
   return state.currentProduct
 }

@@ -8,7 +8,7 @@ export function getProducts ({ commit }) {
     })
 }
 
-export function getProduct ({ commit }, productId) {
+export function getOneProduct ({ commit }, productId) {
   // console.log('cai na acao')
   // console.log(productId)
   api.get('/produtos/' + productId)
