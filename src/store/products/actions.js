@@ -1,5 +1,8 @@
 import { api } from 'boot/axios'
-
+/**
+ *
+ * @todo verificar se já existe na store antes de fazer a request denovo
+ */
 export function getProducts ({ commit }) {
   // console.log('cai na acao')
   api.get('/produtos')
@@ -8,6 +11,11 @@ export function getProducts ({ commit }) {
     })
 }
 
+/**
+ *
+ * @todo verificar se já existe na store antes de fazer a request denovo
+ * @todo usar da store fazer um filter
+ */
 export function getOneProduct ({ commit }, productId) {
   // console.log('cai na acao')
   // console.log(productId)
