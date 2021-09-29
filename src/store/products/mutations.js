@@ -8,3 +8,8 @@ export function setProducts (state, products) {
   state.products = products
   return state.products
 }
+
+export function setCurrentProduct (state, currentProduct) {
+  state.currentProduct = currentProduct
+  return state.currentProduct
+}
