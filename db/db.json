@@ -1,0 +1,24 @@
+{
+  "produtos": [
+    {
+      "id":1,
+      "nome": "Nome Produto",
+      "pesoKG": 500,
+      "valor": 999.99,
+      "img": ""
+    }
+  ],
+  "carrinhos":[
+    {"id":1 , "login":0, "produtos":["0001","0002"], "status":1}
+  ],
+  "status":[
+    {
+      "id":1, 
+      "carrinhoStatus":[
+        {"1":"Ativo"},
+        {"2":"Comprado"},
+        {"3":"Abandonado"}
+      ]
+    }
+  ]  
+}
