@@ -1,34 +1,34 @@
 <template>
-  <q-page class="">
-    <!-- <img
+  <q-page class="text-center">
+    <img
       alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
+      src="~assets/react.png"
       style="width: 200px; height: 200px"
-    > -->
+    >
     <h3>
-      counter: {{ counterGetter }}
+      products: {{ getAll }}
     </h3>
-    <div>
-    <button @click="increment">increment</button>
-    <button @click="decrement">decrement</button>
-    </div>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters, mapMutations } = createNamespacedHelpers('moduleExample')
+const { mapGetters, mapActions } = createNamespacedHelpers('products')
 
 export default defineComponent({
   name: 'PageIndex',
   computed: {
     ...mapGetters([
-      'counterGetter'
+      'getAll'
     ])
   },
   methods: {
-    ...mapMutations(['increment', 'decrement'])
+    ...mapActions(['getProducts'])
+  },
+  mounted: function () {
+    this.getProducts()
   }
+
 })
 </script>
