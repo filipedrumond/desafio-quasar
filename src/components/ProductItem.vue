@@ -34,11 +34,11 @@ export default defineComponent({
     },
 
     id: {
-      type: String
+      type: Number
     },
 
     price: {
-      type: String
+      type: Number
     },
 
     name: {
