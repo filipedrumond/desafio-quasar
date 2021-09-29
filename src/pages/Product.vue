@@ -54,7 +54,7 @@ export default defineComponent({
     ...mapActionsProducts(['getOneProduct']),
     ...mapActionsSession(['addToShoppingCart']),
     onClick: function () {
-      this.addToShoppingCart(this.currentProduct.id)
+      this.addToShoppingCart(this.currentProduct)
       // const $q = useQuasar()
       // $q.dialog({
       //   component: Dialog,

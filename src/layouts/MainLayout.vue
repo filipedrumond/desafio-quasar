@@ -19,7 +19,7 @@
           <q-item
             clickable
             tag="a"
-            href="/testes"
+            href="/#/carrinho"
           >
             <q-icon name="shopping_cart" size="md" />
           </q-item>

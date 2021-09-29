@@ -4,12 +4,7 @@
     tag="a"
     :href="link"
   >
-    <!-- <q-item-section
-      v-if="icon"
-      avatar
-    >
-      <q-icon :name="icon" />
-    </q-item-section> -->
+
     <img
       :alt="'Logo ' + name"
       :src="img"
@@ -18,6 +13,16 @@
     <div class="text-left column justify-between q-py-md">
       <div class="text-h6">{{ name }}</div>
       <div class="value">{{ priceFormat }}</div>
+      <div v-if="isCart">
+        <q-item
+            clickable
+            tag="a"
+            href="/#/carrinho"
+            @click="removeFromCart"
+          >
+            <q-icon name="remove_shopping_cart" size="md" />
+          </q-item>
+      </div>
     </div>
   </q-item>
 </template>
@@ -44,6 +49,10 @@ export default defineComponent({
     name: {
       type: String,
       default: ''
+    },
+
+    isCart: {
+      type: Boolean
     }
   },
   computed: {
@@ -53,6 +62,11 @@ export default defineComponent({
     },
     link: function () {
       return '/#/product/' + this.id
+    }
+  },
+  methods: {
+    removeFromCart: function () {
+      this.$emit('removeFromCart', this.id)
     }
   }
 })
