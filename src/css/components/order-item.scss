@@ -1,0 +1,18 @@
+.c-order-item{
+  .dados{
+    border-left: 10px solid transparent;
+    width: 100%;
+    background-color: #EDEDED;
+    border-radius: 5px;
+    padding: 10px 20px;
+    &.status-1{
+      border-color: $info;
+    }
+    &.status-2{
+      border-color: $positive;
+    }
+    &.status-3{
+      border-color: $negative;
+    }
+  }
+}

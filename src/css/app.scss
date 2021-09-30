@@ -1,5 +1,7 @@
 // app global css in SCSS form
+@import "quasar.variables";
 @import "components/product-item";
+@import "components/order-item";
 @import "routes/product";
 a:-webkit-any-link {
   text-decoration: none !important;

@@ -33,7 +33,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'EssentialLink',
+  name: 'ProductItem',
   props: {
     img: {
       type: String,

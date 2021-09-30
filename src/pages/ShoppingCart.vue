@@ -1,6 +1,6 @@
-<template>
+div<template>
   <q-page class="text-center product-fix-bottom" v-if="getShoppingCart.products.length >= 1">
-    <h5 class="q-mb-sm q-mt-md">Carrinho de compras</h5>
+    <div class="text-h5 q-pt-md q-mb-sm">Carrinho de compras</div>
     <ProductItem
       v-for="product in getShoppingCart.products"
       :key="product.name"
@@ -23,7 +23,7 @@
     </div>
   </q-page>
   <q-page class="text-center"  v-if="getShoppingCart.products.length == 0">
-    <div><h5>Seu carrinho está vazio 😢</h5></div>
+    <div class="text-h5 q-pt-md q-mb-sm">Seu carrinho está vazio 😢</div>
     <div class="justify-between text-center q-pt-xl">
       <router-link to="/" class="text-primary">
         <div>
