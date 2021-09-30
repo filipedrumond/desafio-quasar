@@ -1,6 +1,5 @@
 # Desafio de Quasar
-
-Com certeza é um Quasar Framework app
+Lembre-se de rodar a Fake-API 
 
 ## Install the dependencies
 ```bash
@@ -28,5 +27,4 @@ quasar build
 ```
 ### Assinatura
 Deu um pouco de trabalho mas estou aprendendo muito fazendo.
-### Customize the configuration
-See [Configuring quasar.conf.js](https://v2.quasar.dev/quasar-cli/quasar-conf-js).
+Filipe do futuro: E como deu trabalho mas com certeza aprendi muito.
