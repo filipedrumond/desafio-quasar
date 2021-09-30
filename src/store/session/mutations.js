@@ -6,6 +6,10 @@ export function setShoppingCart (state, shoppingCart) {
   state.shoppingCart = shoppingCart
   return state.shoppingCart
 }
+export function setOrders (state, orders) {
+  state.orders = orders
+  return state.orders
+}
 export function addToShoppingCart (state, product) {
   state.shoppingCart.products.push(product)
   return state.shoppingCart

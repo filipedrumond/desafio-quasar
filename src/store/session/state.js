@@ -3,6 +3,7 @@ export default function () {
     sessionID: '',
     shoppingCart: {
       products: []
-    }
+    },
+    orders: []
   }
 }

@@ -4,3 +4,6 @@ export function getsessionID (state) {
 export function getShoppingCart (state) {
   return state.shoppingCart
 }
+export function getOrders (state) {
+  return state.orders
+}

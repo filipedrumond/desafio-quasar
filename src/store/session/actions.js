@@ -1,4 +1,4 @@
-// import { api } from 'boot/axios'
+import { api } from 'boot/axios'
 
 export function setSessionIdAction ({ commit }, sessionID) {
   commit('setSessionID', sessionID)
@@ -29,4 +29,10 @@ export function submitShoppingCart ({ commit, state }) {
   //   .then(response => {
   //     commit('cleanShoppingCart')
   //   })
+}
+export function loadOrders ({ commit, state }) {
+  api.get(`/carrinhos?sessionID=${state.sessionID}`)
+    .then(response => {
+      commit('setOrders', response.data)
+    })
 }
