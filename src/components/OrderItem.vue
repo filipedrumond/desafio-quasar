@@ -36,12 +36,6 @@ export default defineComponent({
     time: {
       type: String
     }
-  },
-  computed: {
-    priceFormat: function () {
-      const self = this
-      return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(self.price)
-    }
   }
 })
 </script>

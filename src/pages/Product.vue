@@ -40,7 +40,6 @@
 <script>
 import { defineComponent } from 'vue'
 import { createNamespacedHelpers } from 'vuex'
-// import { useQuasar } from 'quasar'
 
 const { mapGetters: mapGettersProducts, mapActions: mapActionsProducts } = createNamespacedHelpers('products')
 const { mapGetters: mapGettersSession, mapActions: mapActionsSession } = createNamespacedHelpers('session')

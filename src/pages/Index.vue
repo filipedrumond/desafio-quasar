@@ -1,11 +1,5 @@
 <template>
   <q-page class="text-center">
-    <!-- <img
-      alt="Quasar logo"
-      src="~assets/products/react.png"
-      style="width: 200px; height: 200px"
-    > -->
-    <!-- {{getAll}} -->
     <ProductItem
       v-for="product in getAll"
       :key="product.name"

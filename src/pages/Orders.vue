@@ -27,7 +27,6 @@ export default defineComponent({
   },
   created: function () {
     this.loadOrders()
-    // this.getOneProduct(this.$route.params.id)
   }
 
 })
