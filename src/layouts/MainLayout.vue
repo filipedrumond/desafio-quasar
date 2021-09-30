@@ -66,8 +66,14 @@ const linksList = [
   {
     title: 'Produtos',
     caption: 'Listagem de produtos',
-    icon: 'dashboard',
+    icon: 'view_list',
     link: '/#/'
+  },
+  {
+    title: 'Pedidos',
+    caption: 'Pedidos já realizados',
+    icon: 'loyalty',
+    link: '/#/pedidos'
   }
 ]
 
