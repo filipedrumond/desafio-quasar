@@ -10,17 +10,19 @@
       :src="img"
       class="q-mr-md"
     >
-    <div class="text-left column justify-between q-py-md">
-      <div class="text-h6">{{ name }}</div>
-      <div class="value">{{ priceFormat }}</div>
-      <div v-if="isCart">
+    <div class="text-left row items-center justify-between q-py-md w-100">
+      <div class="column">
+        <div class="text-h6">{{ name }}</div>
+        <div class="value">{{ priceFormat }}</div>
+      </div>
+      <div class="q-pr-sm" v-if="isCart">
         <q-item
             clickable
             tag="a"
             href="/#/carrinho"
             @click="removeFromCart"
           >
-            <q-icon name="remove_shopping_cart" size="md" />
+            <q-icon name="delete" size="md" />
           </q-item>
       </div>
     </div>

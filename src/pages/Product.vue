@@ -13,7 +13,6 @@
       <div>código: {{currentProduct.id}}</div>
       <div class="text-h6">{{ priceFormat }}</div>
     </div>
-    {{getShoppingCart}}
 
     <div class="fixed-bottom q-pb-md">
       <q-btn class="shadow-7"
@@ -21,22 +20,38 @@
         padding="10px 100px"
         size="16px"
         label="ALUGAR"
-        @click="onClick" />
+        @click="comprarClick" />
     </div>
   </q-page>
+
+  <q-dialog ref="dialogRef" v-model="showDialog" @hide="closeDialog">
+    <q-card class="q-dialog-plugin">
+      <q-card-section>
+        Produto Adicionado
+      </q-card-section>
+      <q-card-actions align="right">
+        <q-btn color="primary" label="OK" @click="()=>{this.showDialog = !this.showDialog}" />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
+
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import { createNamespacedHelpers } from 'vuex'
 // import { useQuasar } from 'quasar'
-// import Dialog from 'components/Dialog.vue'
 
 const { mapGetters: mapGettersProducts, mapActions: mapActionsProducts } = createNamespacedHelpers('products')
 const { mapGetters: mapGettersSession, mapActions: mapActionsSession } = createNamespacedHelpers('session')
 
 export default defineComponent({
   name: 'PageIndex',
+  data () {
+    return {
+      showDialog: false
+    }
+  },
   computed: {
     ...mapGettersProducts(['currentProduct']),
     ...mapGettersSession(['getsessionID', 'getShoppingCart']),
@@ -53,17 +68,13 @@ export default defineComponent({
   methods: {
     ...mapActionsProducts(['getOneProduct']),
     ...mapActionsSession(['addToShoppingCart']),
-    onClick: function () {
+    comprarClick: function () {
+      this.showDialog = !this.showDialog
       this.addToShoppingCart(this.currentProduct)
-      // const $q = useQuasar()
-      // $q.dialog({
-      //   component: Dialog,
-      //   componentProps: {
-      //     title: 'Produto Adicionado ao Carrinho'
-      //   }
-      // }).onDismiss(() => {
-      //   console.log('Called on OK or Cancel')
-      // })
+    },
+    closeDialog: function () {
+      this.showDialog = !this.showDialog
+      this.$router.push('/carrinho')
     }
   },
   created: function () {
