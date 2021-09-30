@@ -1,38 +1,66 @@
 {
   "produtos": [
     {
-      "id":1,
+      "id": 1,
       "name": "ReactJS",
-      "weightKG": 0.500,
+      "weightKG": 0.5,
       "price": 1.99,
       "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794959621672990/react.png"
     },
     {
-      "id":2,
+      "id": 2,
       "name": "VueJS",
-      "weightKG": 0.100,
+      "weightKG": 0.1,
       "price": 1490.99,
       "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794961433616414/vue.png"
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Quasar",
-      "weightKG": 0.500,
+      "weightKG": 0.5,
       "price": 49.99,
       "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794957314793543/quasar.png"
     }
   ],
-  "carrinhos":[
-    {"id":1 , "login":0, "produtos":[1, 2], "status":1}
-  ],
-  "status":[
+  "carrinhos": [
     {
-      "id":1, 
-      "carrinhoStatus":[
-        {"1":"Ativo"},
-        {"2":"Comprado"},
-        {"3":"Abandonado"}
+      "id": 1,
+      "sessionID": "xxxx",
+      "products": [
+        1,
+        2
+      ],
+      "status": 1
+    },
+    {
+      "products": [
+        {
+          "id": 2,
+          "name": "VueJS",
+          "weightKG": 0.1,
+          "price": 1490.99,
+          "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794961433616414/vue.png"
+        }
+      ],
+      "sessionID": "VGKSU8IpNOf6CatXWg",
+      "status": 2,
+      "id": 2
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "carrinhoStatus": [
+        {
+          "1": "Ativo"
+        },
+        {
+          "2": "Comprado"
+        },
+        {
+          "3": "Abandonado"
+        }
       ]
     }
-  ]  
+  ]
 }

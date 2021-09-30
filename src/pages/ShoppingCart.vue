@@ -19,7 +19,7 @@
         padding="10px 80px"
         size="16px"
         label="Finalizar pedido"
-        @click="comprarClick" />
+        @click="finalizarPedido" />
     </div>
   </q-page>
   <q-page class="text-center"  v-if="getShoppingCart.products.length == 0">
@@ -68,9 +68,9 @@ export default defineComponent({
   },
   methods: {
     ...mapActionsProducts(['getProducts']),
-    ...mapActionsSession(['addToShoppingCart', 'removeFromShoppingCart']),
-    comprarClick: function () {
-      this.addToShoppingCart(this.currentProduct)
+    ...mapActionsSession(['addToShoppingCart', 'removeFromShoppingCart', 'submitShoppingCart']),
+    finalizarPedido: function () {
+      this.submitShoppingCart()
     }
   },
   created: function () {

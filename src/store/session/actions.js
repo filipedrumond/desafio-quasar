@@ -1,3 +1,5 @@
+import { api } from 'boot/axios'
+
 export function setSessionIdAction ({ commit }, sessionID) {
   commit('setSessionID', sessionID)
 }
@@ -14,4 +16,16 @@ export function removeFromShoppingCart ({ commit, state }, productId) {
   })
 
   commit('removeFromShoppingCart', filtered)
+}
+export function submitShoppingCart ({ commit, state }) {
+  const shoppingCart = {
+    products: state.shoppingCart.products,
+    sessionID: state.sessionID,
+    status: 2
+  }
+
+  api.post('/carrinhos', shoppingCart)
+    .then(response => {
+      commit('cleanShoppingCart')
+    })
 }

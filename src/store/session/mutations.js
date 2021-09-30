@@ -10,7 +10,11 @@ export function addToShoppingCart (state, product) {
   state.shoppingCart.products.push(product)
   return state.shoppingCart
 }
-export function removeFromShoppingCart (state, product) {
-  state.shoppingCart.products = product
+export function removeFromShoppingCart (state, products) {
+  state.shoppingCart.products = products
+  return state.shoppingCart
+}
+export function cleanShoppingCart (state) {
+  state.shoppingCart.products = []
   return state.shoppingCart
 }
