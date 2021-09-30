@@ -24,27 +24,20 @@
   ],
   "carrinhos": [
     {
-      "id": 1,
-      "sessionID": "xxxx",
-      "products": [
-        1,
-        2
-      ],
-      "status": 1
-    },
-    {
       "products": [
         {
-          "id": 2,
-          "name": "VueJS",
-          "weightKG": 0.1,
-          "price": 1490.99,
-          "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794961433616414/vue.png"
+          "id": 1,
+          "name": "ReactJS",
+          "weightKG": 0.5,
+          "price": 1.99,
+          "img": "https://cdn.discordapp.com/attachments/832016190016061490/892794959621672990/react.png"
         }
       ],
       "sessionID": "Lu72ypLZGgSCwcka13",
       "status": 2,
-      "id": 2
+      "date": "30/09/2021",
+      "time": "01:14:27",
+      "id": 1
     }
   ],
   "status": [
