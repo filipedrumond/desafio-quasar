@@ -1,5 +1,5 @@
 <template>
-  <q-page class="text-center" v-if="getShoppingCart.products.length >= 1">
+  <q-page class="text-center product-fix-bottom" v-if="getShoppingCart.products.length >= 1">
     <h5 class="q-mb-sm q-mt-md">Carrinho de compras</h5>
     <ProductItem
       v-for="product in getShoppingCart.products"
@@ -35,6 +35,16 @@
       </router-link>
     </div>
   </q-page>
+  <q-dialog ref="dialogRef" v-model="showDialog" @hide="closeDialog">
+    <q-card class="q-dialog-plugin">
+      <q-card-section>
+        Obrigado por Comprar comigo 💚
+      </q-card-section>
+      <q-card-actions align="right">
+        <q-btn color="primary" label="OK" @click="()=>{this.showDialog = !this.showDialog}" />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script>
@@ -47,6 +57,11 @@ const { mapGetters: mapGettersSession, mapActions: mapActionsSession } = createN
 
 export default defineComponent({
   name: 'ShoppingCart',
+  data () {
+    return {
+      showDialog: false
+    }
+  },
   components: {
     ProductItem
   },
@@ -70,7 +85,12 @@ export default defineComponent({
     ...mapActionsProducts(['getProducts']),
     ...mapActionsSession(['addToShoppingCart', 'removeFromShoppingCart', 'submitShoppingCart']),
     finalizarPedido: function () {
+      this.showDialog = !this.showDialog
       this.submitShoppingCart()
+    },
+    closeDialog: function () {
+      this.showDialog = !this.showDialog
+      this.$router.push('/pedidos')
     }
   },
   created: function () {
